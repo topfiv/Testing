@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Lawn Service | NEPA Grass Cutting</title>
+    <meta
+      name="description"
+      content="Get an instant lawn mowing quote in Northeast PA, choose options, pick your date, and pay online."
+    />
+    <link rel="canonical" href="https://nepa-grasscutting-demo.pages.dev/booking.html" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css"
+      crossorigin=""
+    />
+  </head>
+  <body>
+    <header class="shell hero">
+      <p class="eyebrow">Instant quote + online checkout</p>
+      <h1>Book your grass cutting service</h1>
+      <p>Draw your yard, choose service options, then schedule and pay.</p>
+    </header>
+
+    <main class="shell">
+      <section class="card">
+        <h2>1) Draw your yard</h2>
+        <p class="notice">Tip: Search your property, then use polygon tool to trace mowable area.</p>
+        <div id="map" aria-label="Yard measurement map"></div>
+        <p>Measured area: <strong id="areaSqft">0</strong> sq ft</p>
+      </section>
+
+      <section class="card">
+        <h2>2) Service details</h2>
+        <form id="bookingForm" class="form-grid">
+          <label>
+            Service address
+            <input required id="address" name="address" placeholder="123 Main St, Scranton, PA" />
+          </label>
+          <label>
+            Date
+            <input required id="date" name="date" type="date" />
+          </label>
+          <label>
+            Time window
+            <select id="time" name="time">
+              <option>8am - 10am</option>
+              <option>10am - 12pm</option>
+              <option>12pm - 2pm</option>
+              <option>2pm - 4pm</option>
+            </select>
+          </label>
+
+          <label><input type="checkbox" id="weedWhack" /> Weed whacking (+$18)</label>
+          <label><input type="checkbox" id="edging" /> Edging (+$12)</label>
+          <label><input type="checkbox" id="treatment" /> Basic treatment (+$35)</label>
+
+          <div>
+            <p>Estimated total</p>
+            <p id="quote" class="quote">$45.00</p>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Continue to payment</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="shell footer">
+      <small>Need help? Call/text local support for Northeast PA routes.</small>
+    </footer>
+
+    <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script defer src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+    <script defer src="/scripts/booking.js"></script>
+    <script defer src="/scripts/pwa.js"></script>
+  </body>
+</html>
